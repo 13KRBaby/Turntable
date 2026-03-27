@@ -134,6 +134,15 @@ camera.add(listener); // 카메라에 귀를 답니다.
 const sound = new THREE.Audio(listener); // 소리 객체 생성
 const audioLoader = new THREE.AudioLoader(); // 음악 파일을 읽어올 도구
 
+        Notification.requestPermission().then(permission => {
+    if (permission === "granted") {
+        new Notification("지금 재생 중", {
+            body: "곡 제목 - 가수",
+            icon: url
+        });
+    }
+});
+
 
         // ==========================================
         // 4. 본체 및 플래터 베이스
